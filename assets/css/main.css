@@ -385,12 +385,12 @@ img {
   padding: 10px;
 }
 
-button {
+.btn {
   border: none;
   background: transparent;
 }
 
-button > span {
+.btn > span {
   display: block;
   width: 4px;
   height: 4px;
@@ -398,7 +398,7 @@ button > span {
   background-color: #807979;
 }
 
-button > span:not(:last-child) {
+.btn > span:not(:last-child) {
   margin-bottom: 3px;
 }
 
@@ -415,5 +415,25 @@ input[type='checkbox'] {
 
 input[type='checkbox']:checked {
   background: #83e083;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0.692);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay .modal {
+  width: clamp(20rem, 90vw, 60%);
+  background: white;
 }
 /*# sourceMappingURL=main.css.map */

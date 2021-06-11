@@ -1,0 +1,13 @@
+.overlay {
+	position: absolute;
+	inset: 0px;
+	background: hsla(0, 0%, 0%, 0.692);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.modal {
+		width: clamp(20rem, 90vw, 60%);
+		background: white;
+	}
+}

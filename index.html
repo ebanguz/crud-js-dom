@@ -48,7 +48,7 @@
 							<div class="table__cell">Admin</div>
 							<div class="table__cell"><span class="active">Active</span></div>
 							<div class="table__cell">
-								<button class="">
+								<button class="btn">
 									<span></span>
 									<span></span>
 									<span></span>
@@ -56,6 +56,55 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="overlay">
+				<div class="modal">
+					<form class="form" action="">
+						<div class="form__div">
+							<label for="name">Name</label>
+							<input type="text" name="name" placeholder="Write your name" title="Name should be only letters" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" />
+						</div>
+						<div class="form__div">
+							<label for="email">E-mail</label>
+							<input type="email" name="email" placeholder="eban@gmail.com" title="Wrong e-mail" required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" />
+						</div>
+						<div class="form__div">
+							<label for="gender">Gender</label>
+							<input type="radio" name="gender" value="M" />
+							<label for="">M</label>
+							<input type="radio" name="gender" value="F" />
+							<label for="">F</label>
+						</div>
+
+						<div class="form__div">
+							<label for="role">Role</label>
+							<select name="role">
+								<option value="">Select...</option>
+								<option value="Admin">Admin</option>
+								<option value="Member">Member</option>
+							</select>
+						</div>
+						<div class="form__div">
+							<label for="status">Status</label>
+							<label>Active</label>
+							<input type="checkbox" name="status" id="" />
+							<label>Disabled</label>
+						</div>
+
+						<!-- <div class="form__div">
+							<label for="comentarios">Comentarios</label>
+							<textarea name="comentarios" cols="50" rows="5" placeholder="Escribe tu comentario" title="NO te pases de 255 palabras" required data-pattern="^.{1,255}$"></textarea>
+						</div> -->
+						<!-- <div class="form-loader none">
+							<img src="./oval.svg" alt="cargando" />
+						</div>
+						<div class="form-respone-success none">
+							<p>Se enviaron los datos</p>
+						</div> -->
+
+						<button type="submit">Submit</button>
+					</form>
 				</div>
 			</div>
 		</main>
