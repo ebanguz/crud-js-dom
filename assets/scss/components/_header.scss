@@ -1,0 +1,19 @@
+.header {
+	width: 100%;
+	padding: 5rem 0;
+
+	h1 {
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	button {
+		background: $color-button;
+		color: $color-row;
+		border: 0;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		padding: 10px;
+	}
+}

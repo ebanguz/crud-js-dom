@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font: $font-weight-light $font-size $font-family;
+	background: $color-background;
+	min-width: 100vh;
+	min-height: 100vh;
+}
+
+.container {
+	width: clamp(43.75rem, 90vw, 70rem);
+	margin: 0 auto;
+	padding: 0 1em;
+	position: relative;
+}
+
+svg,
+img {
+	max-width: 100%;
+}
+
+.active {
+	background: $color-button;
+	color: $color-row;
+}
+
+.disabled {
+	background: $color-background;
+	color: $color-text;
+	font-weight: $font-weight-bold;
+}
+
+.flex {
+	display: flex;
+
+	&-dir-c {
+		flex-direction: column;
+	}
+	&-jc-sb {
+		justify-content: space-between;
+	}
+	&-jc-c {
+		justify-content: center;
+	}
+	&-ai-c {
+		align-items: center;
+	}
+}
