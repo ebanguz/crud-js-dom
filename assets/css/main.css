@@ -315,9 +315,10 @@ img {
 .table__row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 27px 3fr (1fr)[3] 2fr;
-      grid-template-columns: 27px 3fr repeat(3, 1fr) 2fr;
+  -ms-grid-columns: 27px 4fr (1fr)[3] 2fr;
+      grid-template-columns: 27px 4fr repeat(3, 1fr) 2fr;
   grid-column-gap: 2em;
+  padding: 0.7em 0 0.7em 0.5em;
 }
 
 .table__body {
@@ -330,7 +331,6 @@ img {
 }
 
 .table__body .table__row {
-  padding: 0.7em 0;
   border-radius: 0.9375rem;
   background: #fff;
 }
@@ -400,5 +400,20 @@ button > span {
 
 button > span:not(:last-child) {
   margin-bottom: 3px;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.0625rem;
+  height: 1.0625rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px #645f5f solid;
+}
+
+input[type='checkbox']:checked {
+  background: #83e083;
 }
 /*# sourceMappingURL=main.css.map */

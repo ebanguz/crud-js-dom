@@ -3,8 +3,9 @@
 
 	&__row {
 		display: grid;
-		grid-template-columns: 27px 3fr repeat(3, 1fr) 2fr;
+		grid-template-columns: 27px 4fr repeat(3, 1fr) 2fr;
 		grid-column-gap: 2em;
+		padding: 0.7em 0 0.7em 0.5em;
 	}
 
 	&__body {
@@ -14,7 +15,6 @@
 		margin-top: 1em;
 
 		.table__row {
-			padding: 0.7em 0;
 			border-radius: 0.9375rem;
 			background: $background;
 		}
