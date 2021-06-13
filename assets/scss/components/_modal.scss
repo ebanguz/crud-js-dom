@@ -9,5 +9,7 @@
 	.modal {
 		width: clamp(20rem, 90vw, 60%);
 		background: white;
+		padding: 2em 3em;
+		border-radius: 20px;
 	}
 }

@@ -34,6 +34,21 @@ img {
 	font-weight: $font-weight-bold;
 }
 
+.contact-form-error {
+	display: none;
+	font-size: 80%;
+	color: #ff0000c9;
+	transition: all 0.4 ease;
+}
+.contact-form-error.is-active {
+	display: block;
+	animation: show 1s 1 normal 0 ease both;
+}
+
+.none {
+	display: none;
+}
+
 .flex {
 	display: flex;
 

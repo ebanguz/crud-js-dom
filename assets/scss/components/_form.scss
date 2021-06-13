@@ -1,0 +1,48 @@
+.form {
+	text-align: left;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 1rem;
+
+	&__div {
+		margin-bottom: 20px;
+
+		label {
+			color: rgba(26, 26, 26, 0.7);
+			margin-bottom: 6px;
+			font-weight: 600;
+		}
+
+		&--gender {
+			label {
+				margin-right: 1rem;
+			}
+		}
+	}
+
+	input:not([type='checkbox']),
+	select {
+		padding: 8px 12px;
+		box-shadow: 0 0 0 1px #e0e0e0, 0 2px 4px 0 rgba(0, 0, 0, 0.07), 0 1px 1.5px 0 rgba(0, 0, 0, 0.05);
+		outline: none;
+		border: 0;
+		border-radius: 6px;
+	}
+
+	input::placeholder {
+		color: rgba(26, 26, 26, 0.4);
+	}
+
+	// select,
+	// select option {
+	// 	color: #000000;
+	// }
+
+	// select:invalid,
+	// select option[value=''] {
+	// 	color: #999999;
+	// }
+
+	[required]:valid:not([type='radio']) {
+		box-shadow: 0 0 0 1px #44ff00ab, 0 2px 4px 0 rgba(0, 0, 0, 0.07), 0 1px 1.5px 0 rgba(0, 0, 0, 0.05);
+	}
+}

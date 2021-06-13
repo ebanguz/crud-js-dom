@@ -25,7 +25,7 @@
 				<div class="table">
 					<header class="table__head">
 						<div class="table__row">
-							<div class="table__cell"><input type="checkbox" name="" id="" /></div>
+							<div class="table__cell"><input class="table__radio" type="checkbox" name="" id="" /></div>
 							<div class="table__cell">User</div>
 							<div class="table__cell">Gender</div>
 							<div class="table__cell">Role</div>
@@ -36,7 +36,7 @@
 
 					<div class="table__body">
 						<div class="table__row">
-							<div class="table__cell"><input type="checkbox" name="" id="" /></div>
+							<div class="table__cell"><input class="table__radio" type="checkbox" name="" id="" /></div>
 							<div class="table__cell">
 								<img src="img/img1.png" alt="Profile" />
 								<label class="flex flex-dir-c">
@@ -61,38 +61,50 @@
 			<div class="overlay">
 				<div class="modal">
 					<form class="form" action="">
-						<div class="form__div">
+						<div class="form__div flex flex-dir-c">
 							<label for="name">Name</label>
 							<input type="text" name="name" placeholder="Write your name" title="Name should be only letters" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" />
 						</div>
-						<div class="form__div">
+						<div class="form__div flex flex-dir-c">
 							<label for="email">E-mail</label>
 							<input type="email" name="email" placeholder="eban@gmail.com" title="Wrong e-mail" required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" />
 						</div>
-						<div class="form__div">
+						<div class="form__div flex flex-dir-c form__div--gender">
 							<label for="gender">Gender</label>
-							<input type="radio" name="gender" value="M" />
-							<label for="">M</label>
-							<input type="radio" name="gender" value="F" />
-							<label for="">F</label>
+							<div class="flex">
+								<label for="m">
+									<input type="radio" name="gender" value="M" id="m" required />
+									Male
+								</label>
+								<label for="f">
+									<input type="radio" name="gender" value="F" id="f" required />
+									Female
+								</label>
+								<label for="o">
+									<input type="radio" name="gender" value="O" id="o" />
+									Other
+								</label>
+							</div>
 						</div>
 
-						<div class="form__div">
+						<div class="form__div flex flex-dir-c">
 							<label for="role">Role</label>
-							<select name="role">
+							<select name="role" required>
 								<option value="">Select...</option>
 								<option value="Admin">Admin</option>
 								<option value="Member">Member</option>
 							</select>
 						</div>
-						<div class="form__div">
+						<div class="form__div flex flex-dir-c">
 							<label for="status">Status</label>
-							<label>Active</label>
-							<input type="checkbox" name="status" id="" />
-							<label>Disabled</label>
+							<div class="flex flex-ai-c">
+								<label>Disabled</label>
+								<input type="checkbox" class="toggle" checked />
+								<label>Active</label>
+							</div>
 						</div>
 
-						<!-- <div class="form__div">
+						<!-- <div class="form__div flex flex-dir-c">
 							<label for="comentarios">Comentarios</label>
 							<textarea name="comentarios" cols="50" rows="5" placeholder="Escribe tu comentario" title="NO te pases de 255 palabras" required data-pattern="^.{1,255}$"></textarea>
 						</div> -->
@@ -103,7 +115,7 @@
 							<p>Se enviaron los datos</p>
 						</div> -->
 
-						<button type="submit">Submit</button>
+						<button class="btn--submit flex" type="submit">Submit</button>
 					</form>
 				</div>
 			</div>
