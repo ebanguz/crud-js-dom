@@ -13,7 +13,7 @@
 		<header class="header row">
 			<div class="container flex flex-jc-sb">
 				<h1>Users</h1>
-				<button>
+				<button class="btn btn-add">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C10.9864 0 10.1647 0.821689 10.1647 1.83529V10.1647H1.83529C0.821689 10.1647 0 10.9864 0 12C0 13.0136 0.821689 13.8353 1.83529 13.8353H10.1647V22.1647C10.1647 23.1783 10.9864 24 12 24C13.0136 24 13.8353 23.1783 13.8353 22.1647V13.8353H22.1647C23.1783 13.8353 24 13.0136 24 12C24 10.9864 23.1783 10.1647 22.1647 10.1647H13.8353V1.83529C13.8353 0.821689 13.0136 0 12 0Z" fill="white" />
 					</svg>
@@ -58,49 +58,50 @@
 					</div>
 				</div>
 			</div>
-			<div class="overlay">
+			<div class="overlay flex flex-jc-c flex-ai-c none">
 				<div class="modal">
+					<h2>Insert you Information</h2>
 					<form class="form" action="">
 						<div class="form__div flex flex-dir-c">
 							<label for="name">Name</label>
-							<input type="text" name="name" placeholder="Write your name" title="Name should be only letters" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" />
+							<input class="form__name" type="text" name="name" placeholder="Write your name" title="Name should be only letters and spaces" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" />
 						</div>
 						<div class="form__div flex flex-dir-c">
 							<label for="email">E-mail</label>
-							<input type="email" name="email" placeholder="eban@gmail.com" title="Wrong e-mail" required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" />
+							<input class="form__email" type="email" name="email" placeholder="eban@gmail.com" title="Wrong e-mail" required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" />
 						</div>
 						<div class="form__div flex flex-dir-c form__div--gender">
 							<label for="gender">Gender</label>
-							<div class="flex">
-								<label for="m">
-									<input type="radio" name="gender" value="M" id="m" required />
-									Male
-								</label>
-								<label for="f">
-									<input type="radio" name="gender" value="F" id="f" required />
-									Female
-								</label>
-								<label for="o">
-									<input type="radio" name="gender" value="O" id="o" />
-									Other
-								</label>
+
+							<div class="radio">
+								<input class="form__radi" label="Male" type="radio" id="male" name="gender" value="M" />
+								<input class="form__radi" label="Female" type="radio" id="female" name="gender" value="F" />
+								<input class="form__radi" label="Other" type="radio" id="other" name="gender" value="O" />
 							</div>
+							<!-- 
+							<div class="flex flex-ai-b">
+								<input class="form__radio" type="radio" name="gender" value="M" id="m" required title="Pick a gender" />
+								<label for="m">Male</label>
+								<input class="form__radio" type="radio" name="gender" value="F" id="f" />
+								<label for="f">Female</label>
+								<input class="form__radio" type="radio" name="gender" value="O" id="o" />
+								<label for="o">Other</label>
+							</div> -->
 						</div>
 
 						<div class="form__div flex flex-dir-c">
 							<label for="role">Role</label>
-							<select name="role" required>
-								<option value="">Select...</option>
+							<select class="form__select" name="role" required title="Select a role">
+								<option value="" hidden selected>Select...</option>
 								<option value="Admin">Admin</option>
 								<option value="Member">Member</option>
 							</select>
 						</div>
 						<div class="form__div flex flex-dir-c">
 							<label for="status">Status</label>
-							<div class="flex flex-ai-c">
-								<label>Disabled</label>
-								<input type="checkbox" class="toggle" checked />
-								<label>Active</label>
+							<div class="radio">
+								<input label="Disabled" type="radio" id="disabled" name="status" value="Disabled" />
+								<input label="Active" type="radio" id="active" name="status" value="Active" checked />
 							</div>
 						</div>
 
@@ -120,6 +121,6 @@
 				</div>
 			</div>
 		</main>
-		<script src="assets/js/main.js"></script>
+		<script type="module" src="assets/js/main.js"></script>
 	</body>
 </html>

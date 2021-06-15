@@ -2,14 +2,15 @@
 	position: absolute;
 	inset: 0px;
 	background: hsla(0, 0%, 0%, 0.692);
-	display: flex;
-	justify-content: center;
-	align-items: center;
 
 	.modal {
 		width: clamp(20rem, 90vw, 60%);
 		background: white;
 		padding: 2em 3em;
 		border-radius: 20px;
+
+		h2 {
+			color: hsla(0, 0%, 10%, 0.7);
+		}
 	}
 }

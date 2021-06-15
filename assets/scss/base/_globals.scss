@@ -28,6 +28,10 @@ img {
 	color: $color-row;
 }
 
+button > * {
+	pointer-events: none;
+}
+
 .disabled {
 	background: $color-background;
 	color: $color-text;
@@ -44,13 +48,14 @@ img {
 	display: block;
 	animation: show 1s 1 normal 0 ease both;
 }
-
-.none {
-	display: none;
+.contact-form-error.is-radio {
+	position: absolute;
+	top: 1.2rem;
 }
 
 .flex {
 	display: flex;
+	position: relative;
 
 	&-dir-c {
 		flex-direction: column;
@@ -64,4 +69,11 @@ img {
 	&-ai-c {
 		align-items: center;
 	}
+	&-ai-b {
+		align-items: baseline;
+	}
+}
+
+.none {
+	display: none;
 }
