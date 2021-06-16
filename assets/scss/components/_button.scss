@@ -1,25 +1,71 @@
 .btn {
+	position: relative;
 	border: none;
 	background: transparent;
 
-	> span {
-		display: block;
-		width: 4px;
-		height: 4px;
-		border-radius: 50%;
-		background-color: #807979;
+	&--action {
+		> span:not(.tooltip) {
+			display: block;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: $color-button-actions;
 
-		&:not(:last-child) {
-			margin-bottom: 3px;
+			&:not(:last-child) {
+				margin-bottom: 3px;
+			}
 		}
 	}
 
 	&--submit {
 		padding: 0.5em 1.4em;
+		margin-left: auto;
+		color: $color-background;
+		background: $color-button;
 		border: 0;
 		border-radius: 8px;
-		background: $color-button;
-		color: $color-background;
-		margin-left: auto;
+	}
+
+	.tooltip {
+		position: absolute;
+		bottom: 148%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 88px;
+		height: 37px;
+		padding: 8px 14px;
+		background: $color-row;
+		border: 0;
+		border-radius: 39px;
+		box-shadow: $color-border;
+		opacity: 0;
+		visibility: hidden;
+
+		&:after {
+			position: absolute;
+			content: '';
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			border-top: 8px solid $color-border-after;
+			border-right: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-left: 8px solid transparent;
+		}
+
+		svg {
+			&:first-of-type {
+				fill: $color-button-actions-edit;
+			}
+
+			&:nth-of-type(2) {
+				fill: $color-button-actions-delete;
+			}
+		}
+	}
+
+	&.show .tooltip {
+		opacity: 1;
+		visibility: visible;
 	}
 }

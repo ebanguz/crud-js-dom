@@ -247,11 +247,14 @@ input[type="checkbox"], input[type="radio"] {
           box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font: 200 16px "Poppins", sans-serif;
   background: #f1eff5;
-  min-width: 100vh;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .container {
@@ -271,7 +274,7 @@ img {
   color: #fcfcfc;
 }
 
-button > * {
+button > svg {
   pointer-events: none;
 }
 
@@ -318,6 +321,11 @@ button > * {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.flex-jc-sa {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .flex-jc-c {
@@ -394,6 +402,10 @@ button > * {
   margin-left: 56%;
 }
 
+.table__cell .name {
+  font-weight: 400;
+}
+
 .table__head {
   font-weight: 400;
 }
@@ -419,29 +431,74 @@ button > * {
 }
 
 .btn {
+  position: relative;
   border: none;
   background: transparent;
 }
 
-.btn > span {
+.btn--action > span:not(.tooltip) {
   display: block;
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #807979;
+  background-color: #817979;
 }
 
-.btn > span:not(:last-child) {
+.btn--action > span:not(.tooltip):not(:last-child) {
   margin-bottom: 3px;
 }
 
 .btn--submit {
   padding: 0.5em 1.4em;
+  margin-left: auto;
+  color: #f1eff5;
+  background: #308ef3;
   border: 0;
   border-radius: 8px;
-  background: #308ef3;
-  color: #f1eff5;
-  margin-left: auto;
+}
+
+.btn .tooltip {
+  position: absolute;
+  bottom: 148%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 88px;
+  height: 37px;
+  padding: 8px 14px;
+  background: #fcfcfc;
+  border: 0;
+  border-radius: 39px;
+  -webkit-box-shadow: 0 0 0 1px #e0e0e0, 0 2px 4px 0 rgba(0, 0, 0, 0.07), 0 1px 1.5px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 0 1px #e0e0e0, 0 2px 4px 0 rgba(0, 0, 0, 0.07), 0 1px 1.5px 0 rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn .tooltip:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-top: 8px solid #e0e0e0;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+
+.btn .tooltip svg:first-of-type {
+  fill: #fdbf30;
+}
+
+.btn .tooltip svg:nth-of-type(2) {
+  fill: #d93a4a;
+}
+
+.btn.show .tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 .table__radio {
@@ -531,7 +588,7 @@ button > * {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   inset: 0px;
   background: rgba(0, 0, 0, 0.692);
 }
@@ -540,7 +597,7 @@ button > * {
   width: clamp(20rem, 90vw, 60%);
   background: white;
   padding: 2em 3em;
-  border-radius: 20px;
+  border-radius: 0.625em;
 }
 
 .overlay .modal h2 {

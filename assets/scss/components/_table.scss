@@ -1,3 +1,4 @@
+//Gotta refactor this
 .table {
 	padding-bottom: 30px;
 
@@ -37,6 +38,10 @@
 		}
 		&:last-of-type {
 			margin-left: 56%;
+		}
+
+		.name {
+			font-weight: $font-weight-bold;
 		}
 	}
 

@@ -1,5 +1,5 @@
 .overlay {
-	position: absolute;
+	position: fixed;
 	inset: 0px;
 	background: hsla(0, 0%, 0%, 0.692);
 
@@ -7,7 +7,7 @@
 		width: clamp(20rem, 90vw, 60%);
 		background: white;
 		padding: 2em 3em;
-		border-radius: 20px;
+		border-radius: 0.625em;
 
 		h2 {
 			color: hsla(0, 0%, 10%, 0.7);

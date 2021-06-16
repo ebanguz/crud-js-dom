@@ -3,12 +3,14 @@
 *::after {
 	box-sizing: border-box;
 }
+html {
+	height: 100%;
+}
 
 body {
 	font: $font-weight-light $font-size $font-family;
 	background: $color-background;
-	min-width: 100vh;
-	min-height: 100vh;
+	min-height: 100%;
 }
 
 .container {
@@ -28,7 +30,7 @@ img {
 	color: $color-row;
 }
 
-button > * {
+button > svg {
 	pointer-events: none;
 }
 
@@ -62,6 +64,9 @@ button > * {
 	}
 	&-jc-sb {
 		justify-content: space-between;
+	}
+	&-jc-sa {
+		justify-content: space-around;
 	}
 	&-jc-c {
 		justify-content: center;
