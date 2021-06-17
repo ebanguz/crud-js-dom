@@ -1,4 +1,6 @@
+import cleanInputs from './CRUD-functions.js';
 import formValidation from './form-validation.js';
+
 //Falta agregar id de Update
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,10 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let isUpdate = false;
 	let idUser;
 
-	const users = [
-		{name: 'Oscar', email: 'oscar@gmail.com', gender: 'M', role: 'Member', status: 'Active'},
-		{name: 'Jessica', email: 'jessy@gmail.com', gender: 'F', role: 'Admin', status: 'Active'},
-	];
+	const users = [];
 
 	function renderData() {
 		$tableBody.innerHTML = '';
@@ -68,17 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	function deleteUser(index) {
 		users.splice(index, 1);
 		renderData();
-	}
-
-	function cleanInputs() {
-		$form.name.value = '';
-		$form.email.value = '';
-		$form.role.selectedIndex = 0;
-		$form.status[1].checked = true;
-
-		for (const input of $form.gender) {
-			input.checked = false;
-		}
 	}
 
 	function putValueOnForm(id) {
