@@ -400,7 +400,6 @@ button > svg {
   -ms-grid-column-align: start;
       justify-self: start;
   grid-gap: 0.9em;
-  background: white;
 }
 
 .table__cell:nth-of-type(1) label {

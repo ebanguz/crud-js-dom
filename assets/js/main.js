@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	const $template = document.querySelector('#template-row').content;
 	const $fragmento = new DocumentFragment();
 	const $tableBody = d.querySelector('.table__body');
-	let isUpdate = false;
-	let idUser;
+	let isUpdate = false,
+		idUser;
 
-	const users = [];
+	const users = [{name: 'Oscar', email: 'oscar@gmail.com', gender: 'M', role: 'Member', status: 'Active'}];
 
 	function renderData() {
 		$tableBody.innerHTML = '';
