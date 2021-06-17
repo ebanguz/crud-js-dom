@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			$template.querySelector('.table__cell--gender').textContent = user.gender;
 			$template.querySelector('.table__cell--role').textContent = user.role;
 			$template.querySelector('.table__cell--status span').textContent = user.status;
-			const spanClass = user.status.toLowerCase();
-			$template.querySelector('.table__cell--status span').className = spanClass;
+			$template.querySelector('.table__cell--status span').className = user.status.toLowerCase();
 			$template.querySelector('.btn--edit').dataset.id = index;
 			$template.querySelector('.btn--delete').dataset.id = index;
 
