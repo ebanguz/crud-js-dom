@@ -1,10 +1,11 @@
 //Gotta refactor this
 .table {
 	padding-bottom: 30px;
+	// overflow-x: auto;
 
 	&__row {
 		display: grid;
-		grid-template-columns: 27px 4fr repeat(3, 1fr) 2fr;
+		grid-template-columns: 4fr repeat(3, 1fr) 2fr;
 		grid-column-gap: 2em;
 		padding: 0.7em 0 0.7em 0.5em;
 	}
@@ -31,13 +32,21 @@
 			border-radius: 21px;
 		}
 
-		&:nth-of-type(2) {
-			justify-self: start;
+		&:nth-of-type(1) {
+			position: sticky;
+			left: 0;
+			width: 100%;
 			grid-template-columns: 45px 1fr;
+			justify-self: start;
 			grid-gap: 0.9em;
+			background: white;
+
+			label {
+				margin-right: auto;
+			}
 		}
 		&:last-of-type {
-			margin-left: 56%;
+			margin-left: auto;
 		}
 
 		.name {

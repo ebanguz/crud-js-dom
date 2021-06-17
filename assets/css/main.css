@@ -258,7 +258,7 @@ body {
 }
 
 .container {
-  width: clamp(43.75rem, 90vw, 70rem);
+  width: clamp(16rem, 90vw, 70rem);
   margin: 0 auto;
   padding: 0 1em;
   position: relative;
@@ -357,8 +357,8 @@ button > svg {
 .table__row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 27px 4fr (1fr)[3] 2fr;
-      grid-template-columns: 27px 4fr repeat(3, 1fr) 2fr;
+  -ms-grid-columns: 4fr (1fr)[3] 2fr;
+      grid-template-columns: 4fr repeat(3, 1fr) 2fr;
   grid-column-gap: 2em;
   padding: 0.7em 0 0.7em 0.5em;
 }
@@ -390,16 +390,25 @@ button > svg {
   border-radius: 21px;
 }
 
-.table__cell:nth-of-type(2) {
-  -ms-grid-column-align: start;
-      justify-self: start;
+.table__cell:nth-of-type(1) {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  width: 100%;
   -ms-grid-columns: 45px 1fr;
       grid-template-columns: 45px 1fr;
+  -ms-grid-column-align: start;
+      justify-self: start;
   grid-gap: 0.9em;
+  background: white;
+}
+
+.table__cell:nth-of-type(1) label {
+  margin-right: auto;
 }
 
 .table__cell:last-of-type {
-  margin-left: 56%;
+  margin-left: auto;
 }
 
 .table__cell .name {
@@ -434,6 +443,10 @@ button > svg {
   position: relative;
   border: none;
   background: transparent;
+}
+
+.btn--action {
+  margin-right: 20px;
 }
 
 .btn--action > span:not(.tooltip) {
@@ -486,6 +499,10 @@ button > svg {
   border-right: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-left: 8px solid transparent;
+}
+
+.btn .tooltip svg path {
+  pointer-events: none;
 }
 
 .btn .tooltip svg:first-of-type {

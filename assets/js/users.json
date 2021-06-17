@@ -1,0 +1,6 @@
+{
+	"users": [
+		{"name": "Oscar", "email": "oscar@gmail.com", "gender": "M", "role": "Member", "status": "Active"},
+		{"name": "Jessica", "email": "jessy@gmail.com", "gender": "F", "role": "Admin", "status": "Active"}
+	]
+}

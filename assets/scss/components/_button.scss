@@ -15,6 +15,7 @@
 				margin-bottom: 3px;
 			}
 		}
+		margin-right: 20px;
 	}
 
 	&--submit {
@@ -40,6 +41,7 @@
 		box-shadow: $color-border;
 		opacity: 0;
 		visibility: hidden;
+		// z-index: 3;
 
 		&:after {
 			position: absolute;
@@ -54,6 +56,9 @@
 		}
 
 		svg {
+			path {
+				pointer-events: none;
+			}
 			&:first-of-type {
 				fill: $color-button-actions-edit;
 			}
