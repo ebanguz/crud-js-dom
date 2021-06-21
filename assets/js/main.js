@@ -1,17 +1,14 @@
 import cleanInputs from './CRUD-functions.js';
 import formValidation from './form-validation.js';
 
-//Falta agregar id de Update
-
 document.addEventListener('DOMContentLoaded', () => {
 	const d = document;
 	const $overlay = d.querySelector('.overlay');
 	const $form = d.querySelector('.form');
-	const $template = document.querySelector('#template-row').content;
-	const $fragmento = new DocumentFragment();
+	const $inputUserValue = d.querySelector('#user-id');
 	const $tableBody = d.querySelector('.table__body');
-	let isUpdate = false,
-		idUser;
+	const $fragmento = new DocumentFragment();
+	const $template = document.querySelector('#template-row').content;
 
 	const users = [{name: 'Oscar', email: 'oscar@gmail.com', gender: 'M', role: 'Member', status: 'Active'}];
 
@@ -71,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function putValueOnForm(id) {
 		$overlay.classList.toggle('none');
+		$inputUserValue.value = id;
 		$form.name.value = users[id].name;
 		$form.email.value = users[id].email;
 
@@ -83,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		for (const input of $form.status) {
 			input.value === users[id].status && (input.checked = true);
 		}
-		isUpdate = true;
 	}
 
 	d.addEventListener('click', (e) => {
@@ -100,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		if (e.target.matches('.btn--edit')) {
 			putValueOnForm(e.target.dataset.id);
-			idUser = e.target.dataset.id;
 		}
 	});
 
@@ -111,11 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		const entries = formData.entries();
 		const data = Object.fromEntries(entries);
 
-		if (!isUpdate) {
+		if (!$inputUserValue.value) {
 			createUser(data);
 		} else {
-			updateUser(idUser, data);
-			isUpdate = false;
+			updateUser($inputUserValue.value, data);
 		}
 
 		cleanInputs();
